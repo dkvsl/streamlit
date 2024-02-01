@@ -51,26 +51,19 @@ with tab1:
 
     st.header("Columns Type")
  
-# get feature names
-columns = list(df.columns)
+    # get feature names
+    columns = list(df.columns)
  
-# create dataframe
-column_info_table = pd.DataFrame({
+    # create dataframe
+    column_info_table = pd.DataFrame({
       "column": columns,
       "data_type": df.dtypes.tolist()
-})
+    })
      
-# display pandas dataframe as a table
-st.dataframe(column_info_table, hide_index=True)
- 
-# get feature names
-columns = list(df.columns)
- 
-# create dataframe
-column_info_table = pd.DataFrame({
-      "column": columns,
-      "data_type": df.dtypes.tolist()
-})
-     
-# display pandas dataframe as a table
-st.dataframe(column_info_table, hide_index=True)
+    # display pandas dataframe as a table
+    st.dataframe(column_info_table, hide_index=True)   
+       
+with tab2:
+  if uploaded_data is not None:
+    # find numeric features  in the dataframe
+    numeric_cols = df.select_dtypes(include='number').columns.tolist()
