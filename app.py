@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import plotly.express as px
  
 # add title for the app
 st.title("Análisis de datos")
